@@ -40,6 +40,11 @@ body, p, h1, h2, h3, h4, h5 {
    margin: 0 auto;
 }
 
+.full-width-grid-con {
+   display: grid;
+   grid-template-columns: 1fr minmax(0, 1200px) 1fr;
+}
+
 /* ---Mobile Library Grid Styles--- */
 
  .grid-con { 
