@@ -16,3 +16,7 @@ footer p {
 footer span {
     font-family: Arial, Helvetica, sans-serif;
 }
+
+#screens div {
+    height: 300px;
+}
