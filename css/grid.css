@@ -26,8 +26,20 @@ body, p, h1, h2, h3, h4, h5 {
    display: none;
 }
 
+.visually-hidden:not(:focus):not(:active) {
+   position: absolute !important; 
+   width: 1px !important; 
+   height: 1px !important; 
+   padding: 0 !important; 
+   margin: -1px !important; 
+   overflow: hidden !important; 
+   clip-path: inset(50%); 
+   white-space: nowrap !important; 
+   border: 0 !important; 
+}
+
 .box {
-   background: #833AB4;
+   background-color: #ee0a4f;
    color: rgb(255, 255, 255);
    border-radius: 5px;
    padding: 20px;
@@ -41,8 +53,10 @@ body, p, h1, h2, h3, h4, h5 {
 }
 
 .full-width-grid-con {
-   display: grid;
-   grid-template-columns: 1fr minmax(0, 1200px) 1fr;
+   /* set this container as a grid, with 3 columns
+   the other grid will sit in the middle column, this allows for overlapping content */
+   display: grid; 
+	grid-template-columns: 1fr minmax(0, 1200px) 1fr;  
 }
 
 /* ---Mobile Library Grid Styles--- */
@@ -182,5 +196,3 @@ body, p, h1, h2, h3, h4, h5 {
    .l-col-end-12	{grid-column-end: 12;}
    .l-col-end-13	{grid-column-end: 13;}
 }
-
-/* Add XL Later */
