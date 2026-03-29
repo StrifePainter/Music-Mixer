@@ -73,7 +73,13 @@ footer span {
 
 #screens {
   position: relative;
-  padding: 20px;
+  padding: 30px;
+  background-color: #FAF9F6;
+  border-radius: 20px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  border: #8b8b8b 5px solid;
+  box-shadow: #8b8b88 10px 8px;
 }
 
 .top-screen-nested{
@@ -90,8 +96,6 @@ footer span {
   height: 300px;
   margin-bottom: 20px;
 }
-
-
 
 
 #drop-zone-con{
