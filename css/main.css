@@ -13,6 +13,14 @@ h1{
     font-family: 'FinkHeavy', 'Trebuchet MS', Arial, sans-serif;
 }
 
+/*title header*/
+
+header {
+    margin: 10px;
+    padding: 20px;
+}
+
+/*footer*/
 footer p {
     font-family: 'FinkHeavy', 'Trebuchet MS', Arial, sans-serif;
 }
@@ -163,7 +171,10 @@ footer span {
   position: relative;
 }
 .pixel-corners {
-  border: 4px solid transparent;
+  border: 4px solid red;
+  position: relative;
+  background: #ee0a4f;
+  z-index: 1;
 }
 .pixel-corners--wrapper {
   width: fit-content;
@@ -279,6 +290,8 @@ footer span {
   background: #ad0000;
   display: block;
   pointer-events: none;
+  margin: 0;  
+  z-index: -1;
 }
 .pixel-corners::after {
   margin: -4px;
