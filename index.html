@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <link href="css/grid.css" rel="stylesheet">
     <link href="css/main.css" rel="stylesheet">
+    <link rel="icon" type="image/x-icon" href="images/music-mixer-favicon.png">
 </head>
 <body>
 
@@ -15,47 +16,46 @@
     </header>
 
     <main>
+        <audio src="music/pluck.mp3"></audio>
         <section class="grid-con center-grid-con" id="screens">
-            <!-- <div class="col-start-2 col-end-4 m-col-start-4 m-col-end-10" id="top-screen">
-            </div>
-            <div class="box col-start-2 col-end-4 m-col-start-4 m-col-end-10" id="bottom-screen"></div>
-
-            
-            drop zones nested divs
-            <section class="grid-con center-grid-con" id="top-screen-nested">
-                <div class="drop-zone box"></div>
-            </section> -->
 
             <div class="m-col-start-4 m-col-end-10" id="top-screen">
             </div>
+            <div class="m-col-start-2 m-col-end-2 top-screen-nested ds-speakers">
+                <img src="images/speaker.png">
+            </div>
             <div class="m-col-start-5 m-col-end-9" id="drop-zone-con">
-                <div class="col-span-1 drop-zone box top-screen-nested"></div>
-                <div class="col-span-1 drop-zone box top-screen-nested"></div>
-                <div class="col-span-1 drop-zone box top-screen-nested"></div>
-                <div class="col-span-1 drop-zone box top-screen-nested"></div>
+                <div class="col-span-1 drop-zone  top-screen-nested"></div>
+                <div class="col-span-1 drop-zone  top-screen-nested"></div>
+                <div class="col-span-1 drop-zone  top-screen-nested"></div>
+                <div class="col-span-1 drop-zone  top-screen-nested"></div>
             </div>
 
             <div class="m-col-start-4 m-col-end-10" id="btm-screen"></div>
             <div class="m-col-start-5 m-col-end-9" id="drag-icons-con">
+                
                 <div class="col-span-1 drag-icon" draggable="true">
                     <img data-trackref="pluck" src="images/present.svg" alt="gift box" class="loop">
                 </div>
                 <div class="col-span-1 drag-icon" draggable="true">
-                    <img data-trackref="" src="images/fossil.png" alt="fossil" class="loop">
+                    <img data-trackref="drums" src="images/fossil.png" alt="fossil" class="loop">
                 </div>
-                <div class="col-span-1 drag-icon box"></div>
-                <div class="col-span-1 drag-icon box"></div>
-                <div class="col-span-1 drag-icon box"></div>
-                <div class="col-span-1 drag-icon box"></div>
-                <div class="col-span-1 drag-icon box"></div>
-                <div class="col-span-1 drag-icon box"></div>
+                <div class="col-span-1 drag-icon" draggable="true">
+                    <img data-trackref="bass" src="images/music-mixer-favicon.png" alt="" class="loop">
+                </div>
+                <div class="col-span-1 drag-icon" draggable="true">
+                    <img data-trackref="bright-piano" src="images/music-mixer-favicon.png" alt="" class="loop">
+                </div>
+                <div class="col-span-1 drag-icon" draggable="true">
+                    <img data-trackref="guitar" src="images/music-mixer-favicon.png" alt="" class="loop">
+                </div>
+                <div class="col-span-1 drag-icon" draggable="true">
+                    <img data-trackref="monarch-piano" src="images/music-mixer-favicon.png" alt="" class="loop">
+                </div>
             </div>
         </section>
 
-        <!-- drop zones nested divs
-        <section class="grid-con center-grid-con" id="top-screen-nested">
-            <div class="drop-zone box m-col-start-5 m-col-end-6"></div>
-        </section> -->
+
 
             <!-- Audio Controls -->
         <section class="grid-con center-grid-con audio-controls">
@@ -85,8 +85,6 @@
 	    </span>
         </div>
         </section>
-
-
     </main>
 
     <footer class="pixel-corners grid-con center-grid-con">
@@ -97,5 +95,6 @@
         </div>
     </footer>
     
+    <script src="js/main.js"></script>
 </body>
 </html>
