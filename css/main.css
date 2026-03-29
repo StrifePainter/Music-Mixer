@@ -7,7 +7,7 @@
 
 body {
     background-image: url(../images/checkered-background.jpg);
-    animation: moveDiagonal 20s linear infinite;
+    animation: moveDiagonal 80s linear infinite;
 }
 
 @keyframes moveDiagonal {
@@ -15,9 +15,11 @@ body {
         background-position: 0 0;
     }
     to {
-        background-position: 1000px 1000px;
+        background-position: 3300px 3300px;
     }
 }
+
+
 h1{
     font-family: 'FinkHeavy', 'Trebuchet MS', Arial, sans-serif;
 }
@@ -26,10 +28,25 @@ h1{
 
 header {
     margin: 10px;
-    padding: 5px 10px 5px 5px;
+    padding: 15px;
+    font-size: 28px;
+    font-style: normal;
+    color: rgb(0, 83, 73);
+    text-align: center;
+    margin-top: 10px;
+    margin-bottom: 10px;
 }
 
 /*footer*/
+
+footer {
+   border-radius: 5px;
+   padding: 20px;
+   text-align: center;
+   margin-top: 10px;
+   margin-bottom:10px;
+}
+
 footer p {
     font-family: 'FinkHeavy', 'Trebuchet MS', Arial, sans-serif;
 }
@@ -38,10 +55,25 @@ footer span {
     font-family: Arial, Helvetica, sans-serif;
 }
 
+/*screens*/
 
+/* This creates tiny horizontal lines like a DS screen if u wanted to
+    background: repeating-linear-gradient(
+        0deg,
+        rgba(255, 255, 255, 0.1) 0px,
+        rgba(255, 255, 255, 0.1) 1px,
+        transparent 1px,
+        transparent 2px
+    );
+*/
 
-#screens{
+#screens div {
+    height: 300px;
+}
+
+#screens {
   position: relative;
+  padding: 20px;
 }
 
 .top-screen-nested{
@@ -105,11 +137,48 @@ footer span {
   border: 5px dotted white;
 }
 
+/*Music Control Styling*/
+
+button {
+    font-family: 'FinkHeavy', sans-serif;
+    font-size: 1.2rem;
+    color: #514232;
+    background-color: #fff9e3; 
+    border: 4px solid #3bb395;
+    border-radius: 50px;  
+    padding: 10px 25px;
+    cursor: pointer;
+    transition: transform 0.1s ease;
+    box-shadow: inset -4px -4px 0px rgba(0,0,0,0.1), 
+                0px 4px 0px #41cfae;  
+    outline: none;
+    text-transform: uppercase;
+}
+
+button:hover {
+    background-color: #ffffff;
+    transform: translateY(-2px); 
+}
+
+button:active {
+    transform: translateY(2px);
+    box-shadow: inset 2px 2px 4px rgba(0,0,0,0.2); /* Shadow flips inward, use for border boxes */
+    background-color: #e8f5f1;
+}
+
+
+button::after {
+    content: "";
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    border-radius: 50px;
+    pointer-events: none;
+}
+
 /* STAR RATING */
 
 #box-rating {
-   background: linear-gradient(rgb(131, 241, 255) 25%, rgb(111, 185, 255) 100%);
-   color: rgb(241, 3, 162);
+   color: rgb(4, 65, 83);
    border-radius: 15px;
    padding: 10px;
    text-align: center;
@@ -118,6 +187,17 @@ footer span {
    margin-left: auto;
    margin-right: auto;
    
+}
+
+#box-rating h2 {
+    font-size: 35px;
+    font-family: 'FinkHeavy';
+}
+
+#box-rating p {
+    font-size: 24px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    padding-bottom: 8px;
 }
 
 .star-rating {
@@ -133,11 +213,11 @@ footer span {
 
 .star-rating label:is(:hover, :has(~ :hover)) i {
 	transform: scale(1.35);
-	color: #fffdba;
+	color: #fff38a;
 	animation: jump 0.5s calc(0.3s + (var(--i) - 1) * 0.15s) alternate infinite;
 }
 .star-rating label:has(~ :checked) i {
-	color: #faec1b;
+	color: #ffbf11;
 	text-shadow: 0 0 2px #ffffff, 0 0 10px #ffee58;
 }
 
@@ -200,7 +280,7 @@ footer span {
 .pixel-corners {
   border: 4px solid red;
   position: relative;
-  background: #ee0a4f;
+  background: #def8bc;
   z-index: 1;
 }
 .pixel-corners--wrapper {
@@ -314,7 +394,7 @@ footer span {
   bottom: 0;
   left: 0;
   right: 0;
-  background: #ad0000;
+  background: #13845b;
   display: block;
   pointer-events: none;
   margin: 0;  
