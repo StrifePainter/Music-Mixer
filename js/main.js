@@ -1,39 +1,38 @@
 console.log("JavaScript File is linked");
 
 // Variables
-const albumCovers = document.querySelectorAll("#album-art img");
+// const albumCovers = document.querySelectorAll("#album-art img");
 const audioPlayer = document.querySelector('audio');
-const playButton = document.querySelector('#playButton');
-const pauseButton = document.querySelector('#pauseButton');
-const rewind = document.querySelector('#rewindButton');
+const playBtn = document.querySelector('#playButton');
+const pauseBtn = document.querySelector('#pauseButton');
+const rewindBtn = document.querySelector('#rewindButton');
 const volSlider = document.querySelector('#volumeControl');
 const dropZones = document.querySelectorAll(".drop-zone");
-const dragItems = document.querySelectorAll(".drag-icon");
+const dragItems = document.querySelectorAll(".loop");
+let draggedItem = null;
 
-console.log(volSlider);
-
-
+console.log(dragItems);
 
 
 // functions
 
 function loadAudio() {
     console.log("Audio Loaded Called");
-    theAudioEl.src = `audio/${this.dataset.trackref}.mp3`
-    theAudioEl.load();
+    audioPlayer.src = `music/${draggedItem.dataset.trackref}.mp3`
+    audioPlayer.load();
     playAudio();
 }
 
-function playAudio{
-    theAudioEl.play();
+function playAudio() {
+    audioPlayer.play();
 }
 
 function pauseAudio() {
-    theAudioEl.pause();
+    audioPlayer.pause();
 }
 
 function restartAudio() {
-    theAudioEl.currentTime = 0;
+    audioPlayer.currentTime = 0;
     playAudio();
 }
 
@@ -47,33 +46,24 @@ function dragStart() {
 
 function dragOver(e){
     e.preventDefault();
+    console.log("dragover");
 }
 
 function dropped(e){
+
+    console.log("dropped");
     e.preventDefault();
-     draggedItem.classList.add("hidden");
-  // console.log(draggedItem.dataset.instrument);
-  const newImage = document.createElement("img");
-  // dynamically recreate image path
-  newImage.src = `images/${draggedItem.dataset.instrument}.jpg`;
 
-  // error handling if error doesn't exist
-  // if(!newImage){
-  //   return;
-  // }
-
+    //failsafe
+    if (!draggedItem) return;
+ 
+    loadAudio();
+    
   // add image to target zone
-  this.appendChild(newImage);
+  this.appendChild(draggedItem);
 
   // reset the referenced item
   draggedItem = null;
-
-  // create audio element just like creating the image element
-  // dynamically set src attribute 
-  // load it
-  // append it
-  // make it loop
-  // make it play
 }
 
 
@@ -81,13 +71,20 @@ function dropped(e){
 
 //when item is dropped into drop zone run play audio function
 
-albumCovers.foreEach(cover => {
-    cover.addEventListener("click", loadAudio)
+dragItems.forEach(icon => {
+    icon.addEventListener("click", loadAudio);
+    icon.addEventListener('dragstart' , dragStart);
 });
-covers.forEach(cover => cover.addEventListener('click', loadAudio));
+
+dropZones.forEach (zone => {
+    zone.addEventListener('dragover' , dragOver);
+    zone.addEventListener('drop' , dropped)
+});
+
+
 
 // add event handling for the custom controls
-playbtn.addEventListener('click', playAudio);
-rewindbtn.addEventListener('click', restartAudio);
-pausebtn.addEventListener('click', pauseAudio);
-vol.addEventListener('change', setVolume);
+playBtn.addEventListener('click', playAudio);
+rewindBtn.addEventListener('click', restartAudio);
+pauseBtn.addEventListener('click', pauseAudio);
+volSlider.addEventListener('change', setVolume);
