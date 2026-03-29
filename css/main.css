@@ -6,9 +6,18 @@
 }
 
 body {
-background-image: url(../images//checkered-background.jpg);
+    background-image: url(../images/checkered-background.jpg);
+    animation: moveDiagonal 20s linear infinite;
 }
 
+@keyframes moveDiagonal {
+    from {
+        background-position: 0 0;
+    }
+    to {
+        background-position: 1000px 1000px;
+    }
+}
 h1{
     font-family: 'FinkHeavy', 'Trebuchet MS', Arial, sans-serif;
 }
@@ -17,7 +26,7 @@ h1{
 
 header {
     margin: 10px;
-    padding: 20px;
+    padding: 5px 10px 5px 5px;
 }
 
 /*footer*/
@@ -49,6 +58,9 @@ footer span {
   position: relative;
   z-index: 1;
 }
+
+
+
 
 #drop-zone-con{
   display: flex;
