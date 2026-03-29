@@ -15,9 +15,46 @@
 
     <main>
         <section class="grid-con center-grid-con" id="screens">
-            <div class="box col-start-2 col-end-4 m-col-start-4 m-col-end-10" id="top-screen"></div>
+            <!-- <div class="col-start-2 col-end-4 m-col-start-4 m-col-end-10" id="top-screen">
+            </div>
             <div class="box col-start-2 col-end-4 m-col-start-4 m-col-end-10" id="bottom-screen"></div>
+
+            
+            drop zones nested divs
+            <section class="grid-con center-grid-con" id="top-screen-nested">
+                <div class="drop-zone box"></div>
+            </section> -->
+
+            <div class="m-col-start-4 m-col-end-10" id="top-screen">
+            </div>
+            <div class="m-col-start-5 m-col-end-9" id="drop-zone-con">
+                <div class="col-span-1 drop-zone box top-screen-nested"></div>
+                <div class="col-span-1 drop-zone box top-screen-nested"></div>
+                <div class="col-span-1 drop-zone box top-screen-nested"></div>
+                <div class="col-span-1 drop-zone box top-screen-nested"></div>
+            </div>
+
+            <div class="m-col-start-4 m-col-end-10" id="btm-screen"></div>
+            <div class="m-col-start-5 m-col-end-9" id="drag-icons-con">
+                <div class="col-span-1 drag-icon" draggable="true">
+                    <img data-trackref="pluck" src="images/present.svg" alt="gift box" class="loop">
+                </div>
+                <div class="col-span-1 drag-icon" draggable="true">
+                    <img data-trackref="" src="images/fossil.png" alt="fossil" class="loop">
+                </div>
+                <div class="col-span-1 drag-icon box"></div>
+                <div class="col-span-1 drag-icon box"></div>
+                <div class="col-span-1 drag-icon box"></div>
+                <div class="col-span-1 drag-icon box"></div>
+                <div class="col-span-1 drag-icon box"></div>
+                <div class="col-span-1 drag-icon box"></div>
+            </div>
         </section>
+
+        <!-- drop zones nested divs
+        <section class="grid-con center-grid-con" id="top-screen-nested">
+            <div class="drop-zone box m-col-start-5 m-col-end-6"></div>
+        </section> -->
 
             <!-- Audio Controls -->
         <section class="grid-con center-grid-con audio-controls">
