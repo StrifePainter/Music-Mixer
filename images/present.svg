@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 263.59 273.78">
+  <defs>
+    <clipPath id="clippath">
+      <rect x="34.45" y="54.65" width="194.7" height="194.7" style="fill: none;"/>
+    </clipPath>
+    <clipPath id="clippath-1">
+      <polygon points="147.47 43.14 116.12 43.14 100.44 63.66 116.12 97.45 147.47 97.45 163.15 63.66 160.37 60.01 147.47 43.14" style="fill: none;"/>
+    </clipPath>
+  </defs>
+  <g style="isolation: isolate;">
+    <g id="Present">
+      <rect x="34.45" y="54.65" width="194.7" height="194.7" style="fill: #eff9fe; stroke: #eff9fe; stroke-miterlimit: 10;"/>
+      <g style="clip-path: url(#clippath);">
+        <rect x="99.37" y="79.32" width="64.85" height="193.95" style="fill: #bf79b3; stroke: #eff9fe; stroke-miterlimit: 10;"/>
+        <g style="mix-blend-mode: multiply;">
+          <path d="M246.63,34.33l-61.02-24.03-50.53,58.27-3.28,19.82s27.56,31.24,27.56,33.64,62.81,10.81,62.81,10.81l40.86-30.64-16.4-67.88Z" style="fill: #b2a8d3; stroke: #b2a8d3; stroke-miterlimit: 10;"/>
+          <path d="M77.99,10.3l-61.02,24.03L.56,102.21l40.86,30.64s62.81-8.41,62.81-10.81,16.54-17.48,16.54-17.48l32.68-.48L77.99,10.3Z" style="fill: #b2a8d3; stroke: #b2a8d3; stroke-miterlimit: 10;"/>
+        </g>
+      </g>
+      <g>
+        <path d="M246.63,24.62L185.6.59l-50.53,58.27-3.28,19.82s27.56,31.24,27.56,33.64,62.81,10.81,62.81,10.81l40.86-30.64-16.4-67.88Z" style="fill: #bf79b3; stroke: #bf79b3; stroke-miterlimit: 10;"/>
+        <path d="M77.99.59L16.97,24.62.56,92.51l40.86,30.64s62.81-8.41,62.81-10.81,27.56-33.64,27.56-33.64l-3.28-19.82L77.99.59Z" style="fill: #bf79b3; stroke: #bf79b3; stroke-miterlimit: 10;"/>
+      </g>
+      <g>
+        <polygon points="198.95 42.47 163.2 58.81 156.05 78.72 188.73 100.68 213.24 80.25 198.95 42.47" style="fill: #9a3e97; stroke: #9a3e97; stroke-miterlimit: 10;"/>
+        <polygon points="64.86 42.47 50.56 80.25 75.07 100.68 107.75 78.72 100.61 58.81 64.86 42.47" style="fill: #9a3e97; stroke: #9a3e97; stroke-miterlimit: 10;"/>
+      </g>
+      <polygon points="147.47 43.14 116.12 43.14 100.44 63.66 116.12 97.45 147.47 97.45 163.15 63.66 160.37 60.01 147.47 43.14" style="fill: #bf79b3; stroke: #bf79b3; stroke-miterlimit: 10;"/>
+      <g style="clip-path: url(#clippath-1);">
+        <rect x="97.88" y="12.68" width="73.28" height="51.02" style="fill: #da9cc6;"/>
+      </g>
+      <g id="Highlights">
+        <polygon points="184.65 6.51 199.63 33.06 237.07 22.85 184.65 6.51" style="fill: #da9cc6;"/>
+        <polygon points="26.95 22.85 64.24 33.06 79.16 6.51 26.95 22.85" style="fill: #da9cc6;"/>
+        <polygon points="176.31 14.34 184.69 36.81 192.99 33.06 180.73 11.96 176.31 14.34" style="fill: #da9cc6;"/>
+        <polygon points="70.99 33.06 79.12 36.81 87.33 14.34 82.99 11.96 70.99 33.06" style="fill: #da9cc6;"/>
+        <polygon points="131.8 73.74 149.12 56.92 114.9 56.92 131.8 73.74" style="fill: #da9cc6;"/>
+      </g>
+    </g>
+  </g>
+</svg>
