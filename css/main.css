@@ -37,6 +37,22 @@ header {
     margin-bottom: 10px;
 }
 
+/*main ds styling*/
+
+#ds {
+    background-color: #87CEEB;
+    max-width: 1080px; /*THIS IS WHAT'S SQUISHING THE SCREENS*/
+    margin: 40px auto; 
+    padding: 40px 25px; 
+    border-radius: 30px; 
+    box-shadow: 
+        inset 0 4px 0 rgba(255,255,255,0.4), 
+        0 8px 0 #5fb0d0,                 
+        0 15px 20px rgba(0,0,0,0.2);    
+    border: 4px solid #72c2e0;
+}
+
+
 /*footer*/
 
 footer {
