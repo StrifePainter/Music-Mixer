@@ -73,8 +73,16 @@
             <button id="pauseButton">PAUSE<i class="fa-solid fa-pause"></i></button>
             <button id="rewindButton">REWIND</button>
             <button id="resetButton">RESET</button>
-            <input id="volumeControl"  type="range" min="1" max="100" range="100">
+            
+        <div class="ds-volume-container">
+        <i class="fa-solid fa-volume-off"></i>
+        <div class="slider-slot">
+        <input type="range" id="volumeControl" min="0" max="100" value="50">
+        </div>
+        <i class="fa-solid fa-volume-high"></i>
+        </div>
         </section>
+        
         </section>
 
         <!-- Rate Me Section -->
