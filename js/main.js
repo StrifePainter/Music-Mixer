@@ -1,7 +1,7 @@
 console.log("JavaScript File is linked");
 
 // Variables
-// const albumCovers = document.querySelectorAll("#album-art img");
+
 const audioPlayer = document.querySelector('audio');
 const playBtn = document.querySelector('#playButton');
 const pauseBtn = document.querySelector('#pauseButton');
@@ -9,10 +9,21 @@ const rewindBtn = document.querySelector('#rewindButton');
 const volSlider = document.querySelector('#volumeControl');
 const dropZones = document.querySelectorAll(".drop-zone");
 const dragItems = document.querySelectorAll(".loop");
+const resetBtn = document.querySelector("#resetButton");
+const iconsDiv = document.querySelector("#drag-icons-con");
+const dragReset = document.querySelectorAll(".drag-icon");
 let draggedItem = null;
 
-console.log(dragItems);
-
+// making js aware of all audio loops
+// making an object of all loops
+const allLoops = {
+    pluck : "music/pluck.mp3",
+    drums : "music/drums.mp3",
+    bass : "music/bass.mp3",
+    brightPiano : "music/bright-piano.mp3",
+    guitar : "music/guitar.mp3",
+    monarchPiano : "music/monarch-piano"
+}
 
 // functions
 
@@ -37,7 +48,7 @@ function restartAudio() {
 }
 
 function setVolume() {
-    theAudioEl.volume = (this.value/100);
+    audioPlayer.volume = (this.value/100);
 }
 
 function dragStart() {
@@ -56,14 +67,28 @@ function dropped(e){
 
     //failsafe
     if (!draggedItem) return;
- 
-    loadAudio();
+    // can't drop more than 1
+    if(this.children.length >= 1){
+    return;
+  }
     
   // add image to target zone
   this.appendChild(draggedItem);
 
+  loadAudio();
+
   // reset the referenced item
   draggedItem = null;
+}
+
+function resetPage() {
+    // console.log("resetti");
+    // console.log(dragItems);
+
+    // dragReset.forEach(icon => {
+    //     iconsDiv.appendChild(icon);
+    // });
+     window.location.reload();
 }
 
 
@@ -88,3 +113,4 @@ playBtn.addEventListener('click', playAudio);
 rewindBtn.addEventListener('click', restartAudio);
 pauseBtn.addEventListener('click', pauseAudio);
 volSlider.addEventListener('change', setVolume);
+resetBtn.addEventListener('click', resetPage);
