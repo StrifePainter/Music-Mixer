@@ -25,20 +25,27 @@
         <audio src="music/guitar.mp3" loop></audio>
         <audio src="music/monarch-piano.mp3" loop></audio>
 
-
         <section class="grid-con center-grid-con" id="screens">
             <h3 class="hidden">Screen Area</h3>
             <div class="m-col-start-4 m-col-end-10" id="top-screen">
             </div>
-            <div class="m-col-start-2 m-col-end-2 top-screen-nested ds-speakers">
-                <img src="images/speaker.png" alt="speaker image">
-            </div>
+
+            <div class="m-col-start-2 m-col-end-3 ds-speakers">
+                    <img src="images/speaker.png" alt="speaker image">
+                </div>
+                <div class="m-col-start-11 m-col-end-12  ds-speakers">
+                    <img src="images/speaker.png" alt="speaker image">
+                </div>
+                
+                <p class="m-col-start-5 m-col-end-9" id="instructions">Click and drag the icons from the bottom screen into the squares below!</p>
             <div class="m-col-start-5 m-col-end-9" id="drop-zone-con">
                 <div class="col-span-1 drop-zone  top-screen-nested"></div>
                 <div class="col-span-1 drop-zone  top-screen-nested"></div>
                 <div class="col-span-1 drop-zone  top-screen-nested"></div>
                 <div class="col-span-1 drop-zone  top-screen-nested"></div>
             </div>
+
+            <img src="images/double-note.png" class="m-col-start-1 m-col-end-3">
 
             <div class="m-col-start-4 m-col-end-10" id="btm-screen"></div>
             <div class="m-col-start-5 m-col-end-9" id="drag-icons-con">
@@ -62,28 +69,27 @@
                     <img data-trackref="monarch-piano" src="images/grapes.png" alt="grapes" class="loop">
                 </div>
             </div>
-            
+            <img src="images/low-poly-kk 1.svg" class="m-col-start-10 m-col-end-12" id="kk">
         </section>
-
-
 
             <!-- Audio Controls -->
         <section class="grid-con center-grid-con audio-controls">
-            <h3 class="hidden">Audio Controls</h3>
-            <button id="playButton">PLAY<i class="fa-solid fa-play"></i></button>
-            <button id="pauseButton">PAUSE<i class="fa-solid fa-pause"></i></button>
-            <button id="rewindButton">REWIND</button>
-            <button id="resetButton">RESET</button>
-            
-        <div class="ds-volume-container">
-        <i class="fa-solid fa-volume-off"></i>
-        <div class="slider-slot">
-        <input type="range" id="volumeControl" min="0" max="100" value="50">
-        </div>
-        <i class="fa-solid fa-volume-high"></i>
-        </div>
-        </section>
-
+            <section class="col-span-full" id="audio-center">
+                <h3 class="hidden">Audio Controls</h3>
+                <button id="playButton">PLAY<i class="fa-solid fa-play"></i></button>
+                <button id="pauseButton">PAUSE<i class="fa-solid fa-pause"></i></button>
+                <button id="rewindButton">REWIND</button>
+                <button id="resetButton">RESET</button>
+                
+                <div class="ds-volume-container">
+                <i class="fa-solid fa-volume-off"></i>
+                <div class="slider-slot">
+                <input type="range" id="volumeControl" min="0" max="100" value="50">
+                </div>
+                <i class="fa-solid fa-volume-high"></i>
+                </div>
+                </section>
+            </section>
         </section>
 
         <!-- Rate Me Section -->
