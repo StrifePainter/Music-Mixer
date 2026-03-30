@@ -11,8 +11,10 @@ const dropZones = document.querySelectorAll(".drop-zone");
 const dragItems = document.querySelectorAll(".loop");
 const resetBtn = document.querySelector("#resetButton");
 const iconsDiv = document.querySelector("#drag-icons-con");
-const dragReset = document.querySelectorAll(".drag-icon");
 let draggedItem = null;
+let loopStart = null;
+// variable = object
+const currentLoop = [];
 
 // making js aware of all audio loops
 // making an object of all loops
@@ -27,28 +29,38 @@ const allLoops = {
 
 // functions
 
+// had to research how to make the audio loops play over each other
 function loadAudio() {
-    console.log("Audio Loaded Called");
-    audioPlayer.src = `music/${draggedItem.dataset.trackref}.mp3`
-    audioPlayer.load();
-    playAudio();
+    const musicLoop = draggedItem.dataset.trackref;
+    const newAudio = new Audio(`music/${musicLoop}.mp3`);
+    newAudio.loop = true;
+    newAudio.play();
+
+    // push adds to the object []
+    currentLoop.push(newAudio);
 }
 
 function playAudio() {
-    audioPlayer.play();
+    currentLoop.forEach(audio => audio.play());
 }
 
 function pauseAudio() {
-    audioPlayer.pause();
+    // audioPlayer.pause();
+    currentLoop.forEach(audio => audio.pause());
 }
 
 function restartAudio() {
-    audioPlayer.currentTime = 0;
-    playAudio();
+    currentLoop.forEach(audio => {
+        audio.currentTime = 0;
+        audio.play();
+    });
 }
 
-function setVolume() {
-    audioPlayer.volume = (this.value/100);
+function setVolume(audio) {
+    const volume = this.value / 100;
+    currentLoop.forEach(audio => {
+        audio.volume = volume;
+    });
 }
 
 function dragStart() {
@@ -79,33 +91,28 @@ function dropped(e){
 
   // reset the referenced item
   draggedItem = null;
+
 }
 
 function resetPage() {
-    // console.log("resetti");
-    // console.log(dragItems);
-
-    // dragReset.forEach(icon => {
-    //     iconsDiv.appendChild(icon);
-    // });
      window.location.reload();
 }
 
-
-// Event liSTENERS
-
-//when item is dropped into drop zone run play audio function
+// Event listeners
 
 dragItems.forEach(icon => {
-    icon.addEventListener("click", loadAudio);
-    icon.addEventListener('dragstart' , dragStart);
+    icon.addEventListener("click", () => {
+        draggedItem = icon;
+        loadAudio();
+    });
+
+    icon.addEventListener('dragstart', dragStart);
 });
 
 dropZones.forEach (zone => {
     zone.addEventListener('dragover' , dragOver);
     zone.addEventListener('drop' , dropped)
 });
-
 
 
 // add event handling for the custom controls
