@@ -98,16 +98,46 @@ footer span {
     grid-row: 1;
 }
 
-#top-screen{
-    background-image: url(../images/placeholder.png);
+#top-screen {
+    background-image: url(../images/top-screen-cloud-overlay.png), 
+                      url(../images/top-screen-basesky.png);
+    background-size: cover, cover;
+    background-repeat: no-repeat, no-repeat;
+    background-position: 50% 0px, 50% 50%; 
+    animation: hoverClouds 4s ease-in-out infinite alternate;
     grid-row: 1;
     grid-column: 4/10;
     position: relative;
     z-index: 1;
     height: 300px;
     margin-bottom: 20px;
+    border: 6px solid #514232;
+    overflow: hidden;
 }
 
+#top-screen::after {
+    content: "";
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background: repeating-linear-gradient(
+        0deg,
+        rgba(0, 0, 0, 0.05) 0px,
+        rgba(0, 0, 0, 0.05) 1px,
+        transparent 1px,
+        transparent 2px
+    );
+    pointer-events: none;
+}
+
+@keyframes hoverClouds {
+    from {
+        background-position: 50% 0px, 50% 50%;
+    }
+    to {
+        background-position: 50% -20px, 50% 50%;
+    }
+}
 
 #drop-zone-con{
     display: flex;
@@ -118,13 +148,28 @@ footer span {
     position: relative;
 }
 
-#btm-screen{
-    background-image: url(../images/placeholder.png);
+#btm-screen {
+    background-image: url(../images/btm-screen-transparentbg.png), 
+                      url(../images/polka-dot.jpg);
+    background-size: cover, 200px 200px; 
+    background-repeat: no-repeat, repeat;
+    animation: moveDotsDiagonal 15s linear infinite;
     grid-row: 2;
     grid-column: 4/10;
     position: relative;
     z-index: 1;
     height: 300px;
+    border: 6px solid #514232;
+    overflow: hidden;
+}
+
+@keyframes moveDotsDiagonal {
+    from {
+        background-position: center, 0 0;
+    }
+    to {
+        background-position: center, 200px 200px;
+    }
 }
 
 #drag-icons-con{
@@ -244,7 +289,7 @@ button::after {
     -webkit-appearance: none;
     height: 30px;
     width: 30px;
-    background: #fff9e3;#fff9e3;
+    background: #fff9e3;
     border: 4px solid #514232;
     border-radius: 50%;
     margin-top: -12px;
