@@ -1,6 +1,6 @@
-console.log("JavaScript File is linked");
+console.log("JavaScript File is connected :)");
 
-// Variables
+// --- VARIABLES --------------------------
 
 const audioPlayer = document.querySelector('audio');
 const playBtn = document.querySelector('#playButton');
@@ -16,7 +16,7 @@ let loopStart = null;
 // variable = object
 const currentLoop = [];
 
-// making js aware of all audio loops
+// making js aware of each audio loops
 // making an object of all loops
 const allLoops = {
     pluck : "music/pluck.mp3",
@@ -27,7 +27,7 @@ const allLoops = {
     monarchPiano : "music/monarch-piano.mp3"
 }
 
-// functions
+// --- FUNCTIONS -----------------------------
 
 // had to research how to make the audio loops play over each other
 function loadAudio() {
@@ -45,11 +45,12 @@ function playAudio() {
 }
 
 function pauseAudio() {
-    // audioPlayer.pause();
+    // audioPlayer.pause(); stopped working with overlapping audio
     currentLoop.forEach(audio => audio.pause());
 }
 
 function restartAudio() {
+    // works with overlapping audio
     currentLoop.forEach(audio => {
         audio.currentTime = 0;
         audio.play();
@@ -57,6 +58,7 @@ function restartAudio() {
 }
 
 function setVolume(audio) {
+    // works with overlapping audio
     const volume = this.value / 100;
     currentLoop.forEach(audio => {
         audio.volume = volume;
@@ -91,14 +93,13 @@ function dropped(e){
 
   // reset the referenced item
   draggedItem = null;
-
 }
 
 function resetPage() {
      window.location.reload();
 }
 
-// Event listeners
+// --- EVENT LISTENERS ----------------------------
 
 dragItems.forEach(icon => {
     icon.addEventListener("click", () => {
@@ -114,8 +115,6 @@ dropZones.forEach (zone => {
     zone.addEventListener('drop' , dropped)
 });
 
-
-// add event handling for the custom controls
 playBtn.addEventListener('click', playAudio);
 rewindBtn.addEventListener('click', restartAudio);
 pauseBtn.addEventListener('click', pauseAudio);
