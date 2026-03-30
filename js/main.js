@@ -22,7 +22,7 @@ const allLoops = {
     bass : "music/bass.mp3",
     brightPiano : "music/bright-piano.mp3",
     guitar : "music/guitar.mp3",
-    monarchPiano : "music/monarch-piano"
+    monarchPiano : "music/monarch-piano.mp3"
 }
 
 // functions
